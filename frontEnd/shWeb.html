@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Hospitalar - Gestão Completa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Sistema Hospitalar</h1>
+            <p>Gestão completa de médicos, pacientes, medicamentos e consultas</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3>👨‍⚕️ Médicos</h3>
+                <div class="number" id="statMedicos">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>👤 Pacientes</h3>
+                <div class="number" id="statPacientes">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>💊 Medicamentos</h3>
+                <div class="number" id="statMedicamentos">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>📋 Consultas</h3>
+                <div class="number" id="statConsultas">0</div>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="main-menu" id="mainMenu">
+            <button class="menu-btn btn-medico" onclick="showPanel('medico')">
+                <div class="icon">👨‍⚕️</div>
+                <h2>Médicos</h2>
+                <p>Cadastrar, listar, editar e excluir</p>
+            </button>
+            <button class="menu-btn btn-paciente" onclick="showPanel('paciente')">
+                <div class="icon">👤</div>
+                <h2>Pacientes</h2>
+                <p>Cadastrar, listar, editar e excluir</p>
+            </button>
+            <button class="menu-btn btn-medicamento" onclick="showPanel('medicamento')">
+                <div class="icon">💊</div>
+                <h2>Medicamentos</h2>
+                <p>Cadastrar, listar, editar e excluir</p>
+            </button>
+            <button class="menu-btn btn-consulta" onclick="showPanel('consulta')">
+                <div class="icon">📋</div>
+                <h2>Consultas</h2>
+                <p>Registrar, listar, buscar e excluir</p>
+            </button>
+        </div>
+
+        <!-- Content Panels -->
+        <div id="medicoPanel" class="content-panel">
+            <div class="panel-header">
+                <h2>👨‍⚕️ Gestão de Médicos</h2>
+                <button class="back-btn" onclick="showMainMenu()">← Voltar</button>
+            </div>
+            <div class="submenu">
+                <button class="submenu-btn" onclick="showMedicoForm()">➕ Cadastrar</button>
+                <button class="submenu-btn" onclick="listarMedicos()">📋 Listar</button>
+                <button class="submenu-btn" onclick="showEditarMedico()">✏️ Editar</button>
+                <button class="submenu-btn" onclick="showExcluirMedico()">🗑️ Excluir</button>
+            </div>
+            <div id="medicoContent"></div>
+        </div>
+
+        <div id="pacientePanel" class="content-panel">
+            <div class="panel-header">
+                <h2>👤 Gestão de Pacientes</h2>
+                <button class="back-btn" onclick="showMainMenu()">← Voltar</button>
+            </div>
+            <div class="submenu">
+                <button class="submenu-btn" onclick="showPacienteForm()">➕ Cadastrar</button>
+                <button class="submenu-btn" onclick="listarPacientes()">📋 Listar</button>
+                <button class="submenu-btn" onclick="showEditarPaciente()">✏️ Editar</button>
+                <button class="submenu-btn" onclick="showExcluirPaciente()">🗑️ Excluir</button>
+            </div>
+            <div id="pacienteContent"></div>
+        </div>
+
+        <div id="medicamentoPanel" class="content-panel">
+            <div class="panel-header">
+                <h2>💊 Gestão de Medicamentos</h2>
+                <button class="back-btn" onclick="showMainMenu()">← Voltar</button>
+            </div>
+            <div class="submenu">
+                <button class="submenu-btn" onclick="showMedicamentoForm()">➕ Cadastrar</button>
+                <button class="submenu-btn" onclick="listarMedicamentos()">📋 Listar</button>
+                <button class="submenu-btn" onclick="showEditarMedicamento()">✏️ Editar</button>
+                <button class="submenu-btn" onclick="showExcluirMedicamento()">🗑️ Excluir</button>
+            </div>
+            <div id="medicamentoContent"></div>
+        </div>
+
+        <div id="consultaPanel" class="content-panel">
+            <div class="panel-header">
+                <h2>📋 Gestão de Consultas</h2>
+                <button class="back-btn" onclick="showMainMenu()">← Voltar</button>
+            </div>
+            <div class="submenu">
+                <button class="submenu-btn" onclick="showConsultaForm()">➕ Registrar</button>
+                <button class="submenu-btn" onclick="listarConsultas()">📋 Listar</button>
+                <button class="submenu-btn" onclick="showBuscarConsulta()">🔍 Buscar por ID</button>
+                <button class="submenu-btn" onclick="showExcluirConsulta()">🗑️ Excluir</button>
+            </div>
+            <div id="consultaContent"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
